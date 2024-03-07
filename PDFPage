@@ -1,0 +1,22 @@
+<apex:page controller="PDFController" renderAs="pdf">
+    <!-- Include custom CSS styles for the PDF -->
+    <apex:stylesheet value="{!$Resource.PDFStyles}" />
+    <!-- Start of the form -->
+    <apex:form >
+        <!-- Start of the page block -->
+        <apex:pageBlock >
+            <!-- Start of the page block table displaying contacts -->
+            <apex:pageBlockTable value="{!contacts}" var="contact">
+                <!-- Column to display contact name -->
+                <apex:column value="{!contact.Name}" />
+                <!-- Column to display related account name -->
+                <apex:column value="{!contact.Account.Name}" />
+                <!-- Column to display contact phone -->
+                <apex:column value="{!contact.Phone}" />
+            </apex:pageBlockTable>
+            <!-- End of the page block table -->
+        </apex:pageBlock>
+        <!-- End of the page block -->
+    </apex:form>
+    <!-- End of the form -->
+</apex:page>
