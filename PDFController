@@ -1,0 +1,10 @@
+public class PDFController {
+    // List to hold Contact records
+    public List<Contact> contacts { get; set; }
+    
+    // Constructor to initialize contacts with the first 10 Contacts
+    public PDFController() {
+        // Query to retrieve Contact records created today along with related Account Name and Phone
+        contacts = [SELECT Name, Account.Name, Phone FROM Contact WHERE CreatedDate = TODAY];
+    }
+}
